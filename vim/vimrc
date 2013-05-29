@@ -13,9 +13,9 @@ filetype indent on "Auto indent based on filetype
 syntax on "Syntax highlighting
 
 "" Disable operating system error beeps
-"set noerrorbells visualbell t_vb=
-"autocmd GUIEnter * set visualbell t_vb=
-"
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 "" Remove trailing whitespace
 "autocmd BufWritePre * :%s/\s\+$//e
 "
