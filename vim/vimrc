@@ -9,9 +9,9 @@ Bundle 'scrooloose/nerdtree.git'
 
 colorscheme twilight256
 filetype on "Detect the filetype
-"filetype indent on "Auto indent based on filetype
-"syntax on "Syntax highlighting
-"
+filetype indent on "Auto indent based on filetype
+syntax on "Syntax highlighting
+
 "" Disable operating system error beeps
 "set noerrorbells visualbell t_vb=
 "autocmd GUIEnter * set visualbell t_vb=
