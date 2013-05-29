@@ -3,10 +3,14 @@ set -e
 
 # Full path to local repository
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+VUNDLE_DIR="${DIR}/vim/vundle"
 
+rm -rf ${VUNDLE_DIR}
 rm -rf ~/.gitconfig
 rm -rf ~/.vimrc
 rm -rf ~/.vim
+
+git clone https://github.com/gmarik/vundle.git ${VUNDLE_DIR}
 
 ln -s "${DIR}/gitconfig" ~/.gitconfig
 ln -s "${DIR}/vim/vimrc" ~/.vimrc
