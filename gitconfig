@@ -1,0 +1,18 @@
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  bra = branch -a
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+
+[user]
+  name = Joe Karayusuf
+  email = jkarayusuf@gmail.com
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
