@@ -17,3 +17,4 @@
   status = auto
   diff = auto
   branch = auto
+  grep = always
