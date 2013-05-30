@@ -42,7 +42,9 @@ noremap ;rl :Rlib<Space>
 noremap ;rv :Rview<Space>
 noremap ;rc :Rcontroller<Space>
 noremap ;rh :Rhelper<Space>
-"
+
+noremap ;sp :!zeus test %:p<CR>
+
 "noremap ;sp :!spec --color --format=nested %:p<CR>
 "noremap ;cu :!cucumber --format pretty --require features %:p<CR>
 "noremap ;cw :!cucumber --require features --profile wip<CR>
