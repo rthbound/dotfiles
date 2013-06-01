@@ -26,6 +26,9 @@ set shiftwidth=2
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+"" Syntax highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 "" Remove trailing whitespace
 "autocmd BufWritePre * :%s/\s\+$//e
 "
