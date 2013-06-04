@@ -9,6 +9,9 @@
   type = cat-file -t
   dump = cat-file -p
 
+[core]
+  editor = vim
+
 [user]
   name = Joe Karayusuf
   email = jkarayusuf@gmail.com
