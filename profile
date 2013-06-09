@@ -85,10 +85,18 @@ export PATH="/usr/local/mysql/bin:$PATH"
 # ===================================================================
 # Prompts
 # ===================================================================
+function parse_git_status {
+  [ -n "$(git status -z)" ] || return
+  echo -e "*"
+}
+
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo -e "${CYAN}(${BLACK_BOLD}${ref#refs/heads/}${CYAN})"
+  status=$(parse_git_status)
+  echo -e "${CYAN}(${BLACK_BOLD}${ref#refs/heads/}${status}${CYAN})"
 }
+
+echo `parse_git_status`
 
 export PS1="${CYAN}\W\$(parse_git_branch)$ ${RESET}"
 export PS2="${WHITE_BOLD}> ${RESET}"
