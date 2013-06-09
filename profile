@@ -79,8 +79,7 @@ RESET='\033[0m'
 export CLICOLOR=1
 export LSCOLORS=xxFxCxDxCxegedabagaced
 
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # ===================================================================
 # Prompts
@@ -95,8 +94,6 @@ function parse_git_branch {
   status=$(parse_git_status)
   echo -e "${CYAN}(${BLACK_BOLD}${ref#refs/heads/}${status}${CYAN})"
 }
-
-echo `parse_git_status`
 
 export PS1="${CYAN}\W\$(parse_git_branch)$ ${RESET}"
 export PS2="${WHITE_BOLD}> ${RESET}"
