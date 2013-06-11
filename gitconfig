@@ -21,3 +21,6 @@
   diff = auto
   branch = auto
   grep = always
+
+[grep]
+  lineNumber = true
