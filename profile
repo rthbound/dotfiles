@@ -80,6 +80,7 @@ export CLICOLOR=1
 export LSCOLORS=xxFxCxDxCxegedabagaced
 
 export PATH="/usr/local/bin:$PATH"
+export RAILS_LOG_LEVEL=debug
 
 # ===================================================================
 # Prompts
