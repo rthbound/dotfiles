@@ -80,6 +80,9 @@ export CLICOLOR=1
 export LSCOLORS=xxFxCxDxCxegedabagaced
 
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/mysql/bin:$PATH"
+
+export EDITOR=vim
 export RAILS_LOG_LEVEL=debug
 
 # ===================================================================
