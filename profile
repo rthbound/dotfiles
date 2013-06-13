@@ -94,10 +94,18 @@ function parse_git_status {
 }
 
 function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  status=$(parse_git_status)
-  echo -e "${CYAN}(${BLACK_BOLD}${ref#refs/heads/}${status}${CYAN})"
+  [ -n "$(git branch 2>/dev/null)" ] || return
+  echo "$(git branch | grep '*' | sed s/^\*\ // | sed s/[\(\)]//g)"
 }
 
-export PS1="${CYAN}\W\$(parse_git_branch)$ ${RESET}"
+function format_git_prompt {
+  local BRANCH="$(parse_git_branch)"
+  local STATUS="$(parse_git_status)"
+
+  [ -n "${BRANCH}" ] || return
+
+  echo -e "${CYAN}(${BLACK_BOLD}${BRANCH}${STATUS}${CYAN})"
+}
+
+export PS1="${CYAN}\W\$(format_git_prompt)$ ${RESET}"
 export PS2="${WHITE_BOLD}> ${RESET}"
