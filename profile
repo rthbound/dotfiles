@@ -107,5 +107,5 @@ function format_git_prompt {
   echo -e "${CYAN}(${BLACK_BOLD}${BRANCH}${STATUS}${CYAN})"
 }
 
-export PS1="\n${CYAN}\T \W\$(format_git_prompt)${RESET}\n${CYAN}$ ${RESET}"
+export PS1="${CYAN}\W\$(format_git_prompt)$ ${RESET}"
 export PS2="${WHITE_BOLD}> ${RESET}"
