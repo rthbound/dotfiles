@@ -89,7 +89,7 @@ export RAILS_LOG_LEVEL=debug
 # Prompts
 # ===================================================================
 function parse_git_status {
-  [ -n "$(git status -z)" ] || return
+  [ -n "$(git status -z 2>/dev/null)" ] || return
   echo -e "*"
 }
 
