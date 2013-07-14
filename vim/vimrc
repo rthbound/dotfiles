@@ -31,6 +31,15 @@ autocmd GUIEnter * set visualbell t_vb=
 "" Syntax highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
+set textwidth=80 "Wrap when inserting characters past 80 columns
+set colorcolumn=81 "Highlight the 81 column
+
+hi ColorColumn ctermfg=White ctermbg=DarkGray
+
+hi Pmenu ctermfg=White ctermbg=Black
+hi PmenuSel ctermfg=White ctermbg=DarkGray
+
+
 "" Remove trailing whitespace
 "autocmd BufWritePre * :%s/\s\+$//e
 "
@@ -55,8 +64,6 @@ noremap ;sp :!zeus test %:p<CR>
 "noremap ;cw :!cucumber --require features --profile wip<CR>
 "noremap ;cv :!cucumber --require features features/voyager<CR>
 "
-hi Pmenu ctermfg=White ctermbg=Black
-hi PmenuSel ctermfg=White ctermbg=DarkGray
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
