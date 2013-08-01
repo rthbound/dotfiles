@@ -8,31 +8,31 @@ alias ls="ls -G"
 # ===================================================================
 # Colors
 # ===================================================================
-BLACK='\033[0;30m'
-BLACK_BOLD='\033[1;30m'
+BLACK='\[\033[0;30m\]'
+BLACK_BOLD='\[\033[1;30m\]'
 
-RED='\033[0;31m' 
-RED_BOLD='\033[1;31m' 
+RED='\[\033[0;31m\]'
+RED_BOLD='\[\033[1;31m\]'
 
-GREEN='\033[0;32m'
-GREEN_BOLD='\033[1;32m'
+GREEN='\[\033[0;32m\]'
+GREEN_BOLD='\[\033[1;32m\]'
 
-YELLOW='\033[0;33m'
-YELLOW_BOLD='\033[1;33m'
+YELLOW='\[\033[0;33m\]'
+YELLOW_BOLD='\[\033[1;33m\]'
 
-BLUE='\033[0;34m'
-BLUE_BOLD='\033[1;34m'
+BLUE='\[\033[0;34m\]'
+BLUE_BOLD='\[\033[1;34m\]'
 
-PURPLE='\033[0;35m'
-PURPLE_BOLD='\033[1;35m'
+PURPLE='\[\033[0;35m\]'
+PURPLE_BOLD='\[\033[1;35m\]'
 
-CYAN='\033[0;36m'
-CYAN_BOLD='\033[1;36m'
+CYAN='\[\033[0;36m\]'
+CYAN_BOLD='\[\033[1;36m\]'
 
-WHITE='\033[0;37m'
-WHITE_BOLD='\033[1;37m'
+WHITE='\[\033[0;37m\]'
+WHITE_BOLD='\[\033[1;37m\]'
 
-RESET='\033[0m\]'
+RESET='\[\033[0m\]'
 
 # ===================================================================
 # ls Color Scheme
@@ -98,14 +98,14 @@ function parse_git_branch {
   echo "$(git branch | grep '*' | sed s/^\*\ // | sed s/[\(\)]//g)"
 }
 
-function format_git_prompt {
+function git_prompt {
   local BRANCH="$(parse_git_branch)"
   local STATUS="$(parse_git_status)"
 
   [ -n "${BRANCH}" ] || return
 
-  echo -e "${CYAN}(${BLACK_BOLD}${BRANCH}${STATUS}${CYAN})"
+  echo "($(parse_git_branch)$(parse_git_status))"
 }
 
-export PS1="${CYAN}\W\$(format_git_prompt)$ ${RESET}"
+export PS1="${CYAN}\W${BLACK_BOLD}\$(git_prompt)${CYAN}$ ${RESET}"
 export PS2="${WHITE_BOLD}> ${RESET}"
