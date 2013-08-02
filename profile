@@ -90,7 +90,7 @@ export RAILS_LOG_LEVEL=debug
 # ===================================================================
 function parse_git_status {
   [ -n "$(git status -z 2>/dev/null)" ] || return
-  echo -e "*"
+  echo "*"
 }
 
 function parse_git_branch {
@@ -104,7 +104,7 @@ function git_prompt {
 
   [ -n "${BRANCH}" ] || return
 
-  echo "($(parse_git_branch)$(parse_git_status))"
+  echo "(${BRANCH}${STATUS})"
 }
 
 export PS1="${CYAN}\W${BLACK_BOLD}\$(git_prompt)${CYAN}$ ${RESET}"
