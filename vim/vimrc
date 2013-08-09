@@ -81,3 +81,12 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
 noremap ;w :set nowrap<cr>\|<c-w>w\|:vertical resize 80<cr>\|:set wrap<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE Ctrl+J / Ctrl+K
+" Cycle through tabs if tabs are open, otherwise cycles through buffers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" These, however, will use :tabn/:tabp unless there are no tabs, then :bn/:bp
+" Do note: if you have a buffer with multiple tabs, the shortcut will not execute :bn/:bp
+:nnoremap <silent> <C-j> :<C-u>if tabpagenr('$') > 1<Bar>tabnext<Bar>else<Bar>bnext<Bar>endif<CR>
+:nnoremap <silent> <C-k> :<C-u>if tabpagenr('$') > 1<Bar>tabprevious<Bar>else<Bar>bp<Bar>endif<CR>
